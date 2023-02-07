@@ -1,24 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pbK-3N-tIv">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Search Book View Controller-->
+        <scene sceneID="IaN-yG-Q5N">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="SearchBookCoordinator" id="pbK-3N-tIv" customClass="SearchBookViewController" customModule="SEARCHBOOKS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JdC-er-XMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nji-Gl-eTB">
+                                <rect key="frame" x="40" y="203.5" width="295" height="260"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Titre du livre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnk-Wx-qsh" customClass="PaddedTextField" customModule="SEARCHBOOKS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
+                                        <color key="backgroundColor" name="white"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eIb-ck-XNV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="pbK-3N-tIv" id="ear-NU-a1T"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Auteur du livre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rgt-i3-woX" customClass="PaddedTextField" customModule="SEARCHBOOKS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="70" width="295" height="50"/>
+                                        <color key="backgroundColor" name="white"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="daK-2F-Qxl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="light" returnKeyType="go"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="pbK-3N-tIv" id="Ztw-DI-DQZ"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7K-rc-fXb">
+                                        <rect key="frame" x="0.0" y="140" width="295" height="50"/>
+                                        <color key="backgroundColor" name="primary"/>
+                                        <color key="tintColor" name="white"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="RECHERCHER"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="handleTapSearchBooks:" destination="pbK-3N-tIv" eventType="touchUpInside" id="RI0-2p-XPZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xup-hY-0bj">
+                                        <rect key="frame" x="0.0" y="210" width="295" height="50"/>
+                                        <color key="backgroundColor" name="gray900"/>
+                                        <color key="tintColor" name="white"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="MA BIBLIOTHÈQUE"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="handleTapFavoriteBooks:" destination="pbK-3N-tIv" eventType="touchUpInside" id="FbQ-gS-Puc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Vnk-Wx-qsh" firstAttribute="leading" secondItem="nji-Gl-eTB" secondAttribute="leading" id="fdS-eo-eSo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vnk-Wx-qsh" secondAttribute="trailing" id="wfh-rT-QjV"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6m1-T6-s8F">
+                                <rect key="frame" x="40" y="122" width="295" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5dp-ee-9UP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="30"/>
+                                <color key="textColor" name="primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cP1-lx-Tkd"/>
+                        <color key="backgroundColor" name="gray50"/>
+                        <constraints>
+                            <constraint firstItem="nji-Gl-eTB" firstAttribute="centerY" secondItem="JdC-er-XMS" secondAttribute="centerY" id="AsR-uA-Iw8"/>
+                            <constraint firstItem="cP1-lx-Tkd" firstAttribute="trailing" secondItem="nji-Gl-eTB" secondAttribute="trailing" constant="40" id="GCW-Rg-eL2"/>
+                            <constraint firstItem="nji-Gl-eTB" firstAttribute="top" secondItem="6m1-T6-s8F" secondAttribute="bottom" constant="41.5" id="WFd-hf-3J9"/>
+                            <constraint firstItem="6m1-T6-s8F" firstAttribute="trailing" secondItem="nji-Gl-eTB" secondAttribute="trailing" id="eHj-m7-80Y"/>
+                            <constraint firstItem="6m1-T6-s8F" firstAttribute="leading" secondItem="nji-Gl-eTB" secondAttribute="leading" id="f6A-B9-x4q"/>
+                            <constraint firstItem="nji-Gl-eTB" firstAttribute="leading" secondItem="cP1-lx-Tkd" secondAttribute="leading" constant="40" id="glH-ly-W1i"/>
+                            <constraint firstItem="nji-Gl-eTB" firstAttribute="centerX" secondItem="JdC-er-XMS" secondAttribute="centerX" id="qld-WO-Md3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonSearchBooks" destination="g7K-rc-fXb" id="REg-FB-ImH"/>
+                        <outlet property="buttonShowFavoriteBooks" destination="Xup-hY-0bj" id="mvu-Bi-XTs"/>
+                        <outlet property="labelViewTitle" destination="6m1-T6-s8F" id="1pY-cP-VDm"/>
+                        <outlet property="textFieldBookAuthor" destination="rgt-i3-woX" id="m02-CA-4M5"/>
+                        <outlet property="textFieldBookTitle" destination="Vnk-Wx-qsh" id="REb-6N-Y2h"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8d-2i-rVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-343" y="-12"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="gray50">
+            <color red="0.96862745098039216" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray900">
+            <color red="0.11372549019607843" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.3843137254901961" green="0.12549019607843137" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
