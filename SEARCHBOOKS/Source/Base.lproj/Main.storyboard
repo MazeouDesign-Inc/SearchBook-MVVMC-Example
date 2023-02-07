@@ -44,7 +44,7 @@
                                             <outlet property="delegate" destination="pbK-3N-tIv" id="Ztw-DI-DQZ"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7K-rc-fXb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7K-rc-fXb" customClass="HighlightedButton" customModule="SEARCHBOOKS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="140" width="295" height="50"/>
                                         <color key="backgroundColor" name="primary"/>
                                         <color key="tintColor" name="white"/>
@@ -59,7 +59,7 @@
                                             <action selector="handleTapSearchBooks:" destination="pbK-3N-tIv" eventType="touchUpInside" id="RI0-2p-XPZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xup-hY-0bj">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xup-hY-0bj" customClass="HighlightedButton" customModule="SEARCHBOOKS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="210" width="295" height="50"/>
                                         <color key="backgroundColor" name="gray900"/>
                                         <color key="tintColor" name="white"/>

@@ -62,8 +62,7 @@
 		C88C950C299224A8004D6E13 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C950B299224A8004D6E13 /* DataManager.swift */; };
 		C88C950F29922518004D6E13 /* BookDetailViewModelImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C950E29922518004D6E13 /* BookDetailViewModelImp.swift */; };
 		C88C951129922576004D6E13 /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C951029922576004D6E13 /* UIImageView+extension.swift */; };
-		C88C951329929588004D6E13 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C951229929588004D6E13 /* Button.swift */; };
-		C88C9515299295AA004D6E13 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C9514299295AA004D6E13 /* ActionButton.swift */; };
+		C88C951B2992A699004D6E13 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C951A2992A699004D6E13 /* Button.swift */; };
 		FB5450EE3D40F77EE36FE5C0 /* Pods_SEARCHBOOKS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9A2566A6CF17F3CAB9D33 /* Pods_SEARCHBOOKS.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,8 +127,7 @@
 		C88C950B299224A8004D6E13 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C88C950E29922518004D6E13 /* BookDetailViewModelImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModelImp.swift; sourceTree = "<group>"; };
 		C88C951029922576004D6E13 /* UIImageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
-		C88C951229929588004D6E13 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		C88C9514299295AA004D6E13 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		C88C951A2992A699004D6E13 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,8 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				C88C94A02991F8EA004D6E13 /* PaddedTextField.swift */,
-				C88C951229929588004D6E13 /* Button.swift */,
-				C88C9514299295AA004D6E13 /* ActionButton.swift */,
+				C88C951A2992A699004D6E13 /* Button.swift */,
 			);
 			path = SharedUIElements;
 			sourceTree = "<group>";
@@ -692,7 +689,6 @@
 				C88C94DC29921F76004D6E13 /* BookListViewModel.swift in Sources */,
 				C86879312991E4AF00BC80E0 /* AppDelegate.swift in Sources */,
 				C88C94B129920208004D6E13 /* BookSearchInfos.swift in Sources */,
-				C88C9515299295AA004D6E13 /* ActionButton.swift in Sources */,
 				C88C94E5299220B0004D6E13 /* BookListViewController.swift in Sources */,
 				C88C950829922445004D6E13 /* CoreDataStack.swift in Sources */,
 				C88C94C329920AE1004D6E13 /* TextfieldsKeyboardManager.swift in Sources */,
@@ -722,7 +718,7 @@
 				C88C950F29922518004D6E13 /* BookDetailViewModelImp.swift in Sources */,
 				C88C951129922576004D6E13 /* UIImageView+extension.swift in Sources */,
 				C88C94A72991FA8A004D6E13 /* Coordinator.swift in Sources */,
-				C88C951329929588004D6E13 /* Button.swift in Sources */,
+				C88C951B2992A699004D6E13 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
