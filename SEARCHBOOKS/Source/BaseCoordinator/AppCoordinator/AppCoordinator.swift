@@ -9,16 +9,29 @@
 import UIKit
 
 final class AppCoordinator: Coordinator {
-    private var window : UIWindow?
+    func start(books: [Book]) -> UIViewController {
+        let mainVC = searchCoordinator.start()
+        self.window?.rootViewController = mainVC
+        self.window?.makeKeyAndVisible()
+        
+        return mainVC
+    }
     
-    init(window : UIWindow) {
+    private var window: UIWindow?
+    
+    lazy var dataStore: DataStore = {
+        // Fetching books mock-datas for testing
+        return DataStoreImp()
+    }()
+    
+    init(window: UIWindow) {
         self.window = window
     }
     var searchCoordinator: SearchBookCoordinator!
     
     @discardableResult
     func start()->UIViewController{
-        searchCoordinator = SearchBookCoordinator()
+        searchCoordinator = SearchBookCoordinator(dataStore: dataStore)
         let mainVC = searchCoordinator.start()
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()

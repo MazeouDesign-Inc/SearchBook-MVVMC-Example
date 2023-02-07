@@ -14,7 +14,7 @@ def sharedPod
   #Core
   #Dev Tools
   pod 'SwiftGen', '~> 6.6.2'
-  pod 'SDWebImage', '~> 3.8.3'
+  pod 'IQKeyboardManager'
 end
 
 target 'SEARCHBOOKS' do

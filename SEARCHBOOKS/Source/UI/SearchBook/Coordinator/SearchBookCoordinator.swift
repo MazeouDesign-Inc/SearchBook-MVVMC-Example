@@ -9,12 +9,23 @@
 import UIKit
 
 class SearchBookCoordinator: Coordinator {
+    func start(books: [Book]) -> UIViewController {
+        let searchBookVC = SearchBookCoordinator.instantiateViewController() as! SearchBookViewController
+        rootViewController = UINavigationController(rootViewController: searchBookVC)
+        return rootViewController
+    }
+    
     var rootViewController: UINavigationController!
+    var dataStore: DataStore
+    
+    init(dataStore: DataStore) {
+        self.dataStore = dataStore
+    }
     
     func start() -> UIViewController {
         let searchBookVC = SearchBookCoordinator.instantiateViewController() as! SearchBookViewController
         rootViewController = UINavigationController(rootViewController: searchBookVC)
-        //searchBookVC.dataStore = dataStore
+        searchBookVC.dataStore = dataStore
         searchBookVC.rootViewController = rootViewController
         
         return rootViewController

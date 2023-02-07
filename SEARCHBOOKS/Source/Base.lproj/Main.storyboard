@@ -12,7 +12,7 @@
         <!--Search Book View Controller-->
         <scene sceneID="IaN-yG-Q5N">
             <objects>
-                <viewController storyboardIdentifier="SearchBookCoordinator" id="pbK-3N-tIv" customClass="SearchBookViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchBookCoordinator" id="pbK-3N-tIv" customClass="SearchBookViewController" customModule="SEARCHBOOKS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JdC-er-XMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nji-Gl-eTB">
                                 <rect key="frame" x="40" y="203.5" width="295" height="260"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Titre du livre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnk-Wx-qsh" customClass="PaddedTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Titre du livre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnk-Wx-qsh" customClass="PaddedTextField" customModule="SEARCHBOOKS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="50"/>
                                         <color key="backgroundColor" name="white"/>
                                         <constraints>
@@ -32,7 +32,7 @@
                                             <outlet property="delegate" destination="pbK-3N-tIv" id="ear-NU-a1T"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Auteur du livre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rgt-i3-woX" customClass="PaddedTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Auteur du livre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rgt-i3-woX" customClass="PaddedTextField" customModule="SEARCHBOOKS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="70" width="295" height="50"/>
                                         <color key="backgroundColor" name="white"/>
                                         <constraints>
@@ -104,6 +104,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonSearchBooks" destination="g7K-rc-fXb" id="REg-FB-ImH"/>
+                        <outlet property="buttonShowFavoriteBooks" destination="Xup-hY-0bj" id="mvu-Bi-XTs"/>
+                        <outlet property="labelViewTitle" destination="6m1-T6-s8F" id="1pY-cP-VDm"/>
                         <outlet property="textFieldBookAuthor" destination="rgt-i3-woX" id="m02-CA-4M5"/>
                         <outlet property="textFieldBookTitle" destination="Vnk-Wx-qsh" id="REb-6N-Y2h"/>
                     </connections>
