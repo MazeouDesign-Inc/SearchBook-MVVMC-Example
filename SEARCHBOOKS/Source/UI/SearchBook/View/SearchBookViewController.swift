@@ -20,6 +20,8 @@ class SearchBookViewController: UIViewController {
     @IBOutlet
     var buttonShowFavoriteBooks: UIButton!
     
+    let dataManager = DataManager()
+    var listBooksViewCoordinator : BookListCoordinator!
     var dataStore : DataStore!
     var rootViewController: UINavigationController!
 
@@ -43,12 +45,59 @@ class SearchBookViewController: UIViewController {
         buttonShowFavoriteBooks.setAttributedTitle(NSAttributedString(string: "MA BIBLIOTHÈQUE", attributes: [.font: FontFamily.Sprout.bold.font(size: 17)]), for: .selected)
     }
     
+    func refreshBooks() {
+        handleDone()
+        DataManager.shared.loadBooks(bookTitle: textFieldBookTitle.text ?? "",
+                                     bookAuthor: textFieldBookAuthor.text ?? "",
+                                     success: { [weak self] (books) in
+            DispatchQueue.main.async {
+                self?.listBooksViewCoordinator = BookListCoordinator(dataStore: self?.dataStore)
+                self?.listBooksViewCoordinator.isFavoriteBooksView = false
+                if let listBooksVC = self?.listBooksViewCoordinator.start(books: books!) {
+                    self?.rootViewController.present(listBooksVC, animated: true)
+                }
+            }
+        })
+    }
+    
     @IBAction func handleTapSearchBooks(_ sender: UIButton) {
-        //TODO: Complete method
+        refreshBooks()
     }
     
     @IBAction func handleTapFavoriteBooks(_ sender: UIButton) {
-        //TODO: Complete method
+        do {
+            let context = CoreDataStack.shared.persistentContainer.newBackgroundContext()
+            let favoriteBooks = try context.fetch(FavoriteBook.fetchRequest())
+            var books: [Book]? = []
+            for favoriteBook in favoriteBooks {
+                let bookImage = BookImageLinks(small: favoriteBook.bookInfos?.bookImages?.small,
+                                               thumb: favoriteBook.bookInfos?.bookImages?.thumb)
+                let bookInfo = BookInfos(title: favoriteBook.bookInfos?.title ?? "",
+                                         subtitle: favoriteBook.bookInfos?.subtitle,
+                                         authors: favoriteBook.bookInfos?.authors as? [String],
+                                         publisher: favoriteBook.bookInfos?.publisher,
+                                         bookDescription: favoriteBook.bookInfos?.bookDescription,
+                                         bookImages: bookImage)
+                let searchInfo = BookSearchInfos(textSnippet: favoriteBook.searchInfos?.textSnippet)
+                let book = Book(id: favoriteBook.id ?? "", bookInfos: bookInfo, searchInfos: searchInfo)
+                
+                books?.append(book)
+            }
+            DispatchQueue.main.async {
+                self.listBooksViewCoordinator = BookListCoordinator(dataStore: self.dataStore)
+                
+                //self.rootViewController.pushViewController(listBooksVC, animated: true)
+                self.listBooksViewCoordinator.isFavoriteBooksView = true
+                let listBooksVC = self.listBooksViewCoordinator.start(books: books!)
+                self.rootViewController.present(listBooksVC, animated: true)
+            }
+        } catch {
+            //TODO: Error management
+        }
+    }
+    
+    func handleDone() {
+        view.endEditing(true)
     }
 }
 

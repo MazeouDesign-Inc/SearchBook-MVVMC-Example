@@ -12,6 +12,9 @@ class SearchBookCoordinator: Coordinator {
     func start(books: [Book]) -> UIViewController {
         let searchBookVC = SearchBookCoordinator.instantiateViewController() as! SearchBookViewController
         rootViewController = UINavigationController(rootViewController: searchBookVC)
+        searchBookVC.dataStore = dataStore
+        searchBookVC.rootViewController = rootViewController
+        
         return rootViewController
     }
     
