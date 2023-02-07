@@ -1,20 +1,26 @@
 PODS:
   - IQKeyboardManager (6.5.11)
+  - SDWebImage (3.8.3):
+    - SDWebImage/Core (= 3.8.3)
+  - SDWebImage/Core (3.8.3)
   - SwiftGen (6.6.2)
 
 DEPENDENCIES:
   - IQKeyboardManager
+  - SDWebImage (~> 3.8.3)
   - SwiftGen (~> 6.6.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - IQKeyboardManager
+    - SDWebImage
     - SwiftGen
 
 SPEC CHECKSUMS:
   IQKeyboardManager: ef43ce1ba1e5aaf4adf222c0a46f39761f246879
+  SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
 
-PODFILE CHECKSUM: eff966ab6abe1c9daa965a165bdd386a6c6eb69e
+PODFILE CHECKSUM: 2c460f3003085fb4f31735ea16f3cfe2698b985e
 
 COCOAPODS: 1.11.3

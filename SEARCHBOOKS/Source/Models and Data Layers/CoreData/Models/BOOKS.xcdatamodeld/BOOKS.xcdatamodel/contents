@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavoriteBook" representedClassName="FavoriteBook" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <relationship name="bookInfos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteBookInfos" inverseName="book" inverseEntity="FavoriteBookInfos"/>
+        <relationship name="searchInfos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteBookSearchInfos" inverseName="book" inverseEntity="FavoriteBookSearchInfos"/>
+    </entity>
+    <entity name="FavoriteBookImageLinks" representedClassName="FavoriteBookImageLinks" syncable="YES" codeGenerationType="class">
+        <attribute name="small" optional="YES" attributeType="String"/>
+        <attribute name="thumb" optional="YES" attributeType="String"/>
+        <relationship name="favoriteBookInfos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteBookInfos" inverseName="bookImages" inverseEntity="FavoriteBookInfos"/>
+    </entity>
+    <entity name="FavoriteBookInfos" representedClassName="FavoriteBookInfos" syncable="YES" codeGenerationType="class">
+        <attribute name="authors" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="bookDescription" optional="YES" attributeType="String"/>
+        <attribute name="publisher" optional="YES" attributeType="String"/>
+        <attribute name="subtitle" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteBook" inverseName="bookInfos" inverseEntity="FavoriteBook"/>
+        <relationship name="bookImages" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteBookImageLinks" inverseName="favoriteBookInfos" inverseEntity="FavoriteBookImageLinks"/>
+    </entity>
+    <entity name="FavoriteBookSearchInfos" representedClassName="FavoriteBookSearchInfos" syncable="YES" codeGenerationType="class">
+        <attribute name="textSnippet" optional="YES" attributeType="String"/>
+        <relationship name="book" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteBook" inverseName="searchInfos" inverseEntity="FavoriteBook"/>
+    </entity>
+</model>

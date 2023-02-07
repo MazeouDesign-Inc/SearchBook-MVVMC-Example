@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AppCoordinator: Coordinator {
+final class AppCoordinator : Coordinator{
     func start(books: [Book]) -> UIViewController {
         let mainVC = searchCoordinator.start()
         self.window?.rootViewController = mainVC
@@ -17,21 +17,24 @@ final class AppCoordinator: Coordinator {
         return mainVC
     }
     
-    private var window: UIWindow?
     
-    lazy var dataStore: DataStore = {
-        // Fetching books mock-datas for testing
+    private var window : UIWindow?
+    
+   lazy var dataStore : DataStore = {
         return DataStoreImp()
     }()
     
-    init(window: UIWindow) {
+    init(window : UIWindow) {
         self.window = window
     }
+    var listCoordinator : BookListCoordinator!
     var searchCoordinator: SearchBookCoordinator!
     
     @discardableResult
     func start()->UIViewController{
+        //zzz - listCoordinator = AnimeListCoordinator(dataStore: dataStore)
         searchCoordinator = SearchBookCoordinator(dataStore: dataStore)
+        //zzz - let mainVC = listCoordinator.start()
         let mainVC = searchCoordinator.start()
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()
