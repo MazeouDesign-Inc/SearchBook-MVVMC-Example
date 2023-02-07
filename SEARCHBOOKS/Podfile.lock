@@ -1,0 +1,22 @@
+PODS:
+  - SDWebImage (3.8.3):
+    - SDWebImage/Core (= 3.8.3)
+  - SDWebImage/Core (3.8.3)
+  - SwiftGen (6.6.2)
+
+DEPENDENCIES:
+  - SDWebImage (~> 3.8.3)
+  - SwiftGen (~> 6.6.2)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SDWebImage
+    - SwiftGen
+
+SPEC CHECKSUMS:
+  SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
+  SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
+
+PODFILE CHECKSUM: 1e3dabd8f3688b61daff767429d9ec15b5ab85eb
+
+COCOAPODS: 1.11.3
