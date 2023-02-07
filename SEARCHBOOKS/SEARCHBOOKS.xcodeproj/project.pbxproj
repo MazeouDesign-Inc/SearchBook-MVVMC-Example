@@ -13,6 +13,12 @@
 		C86879382991E4AF00BC80E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86879362991E4AF00BC80E0 /* Main.storyboard */; };
 		C868793A2991E4B100BC80E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C86879392991E4B100BC80E0 /* Assets.xcassets */; };
 		C868793D2991E4B100BC80E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C868793B2991E4B100BC80E0 /* LaunchScreen.storyboard */; };
+		C88C94912991EDE8004D6E13 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88C94902991EDE8004D6E13 /* Colors.xcassets */; };
+		C88C94932991EDF7004D6E13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88C94922991EDF7004D6E13 /* Images.xcassets */; };
+		C88C94972991EE55004D6E13 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C94952991EE55004D6E13 /* Assets.swift */; };
+		C88C94982991EE55004D6E13 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C94962991EE55004D6E13 /* Fonts.swift */; };
+		C88C949A2991F10A004D6E13 /* UIColor+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C94992991F10A004D6E13 /* UIColor+Styles.swift */; };
+		C88C949C2991F3F8004D6E13 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C88C949B2991F3F7004D6E13 /* README.md */; };
 		FB5450EE3D40F77EE36FE5C0 /* Pods_SEARCHBOOKS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9A2566A6CF17F3CAB9D33 /* Pods_SEARCHBOOKS.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +34,17 @@
 		C86879392991E4B100BC80E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C868793C2991E4B100BC80E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C868793E2991E4B100BC80E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C88C948A2991EB08004D6E13 /* Sprout-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sprout-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C88C948B2991EB08004D6E13 /* Sprout-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sprout-Medium.ttf"; sourceTree = "<group>"; };
+		C88C948C2991EB08004D6E13 /* Sprout-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sprout-Bold.ttf"; sourceTree = "<group>"; };
+		C88C948D2991EB08004D6E13 /* Sprout-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sprout-MediumItalic.ttf"; sourceTree = "<group>"; };
+		C88C948E2991EB08004D6E13 /* Sprout-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sprout-Regular.ttf"; sourceTree = "<group>"; };
+		C88C94902991EDE8004D6E13 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		C88C94922991EDF7004D6E13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C88C94952991EE55004D6E13 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		C88C94962991EE55004D6E13 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		C88C94992991F10A004D6E13 /* UIColor+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Styles.swift"; sourceTree = "<group>"; };
+		C88C949B2991F3F7004D6E13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +79,8 @@
 		C86879242991E4AF00BC80E0 = {
 			isa = PBXGroup;
 			children = (
+				C88C949B2991F3F7004D6E13 /* README.md */,
+				C88C94942991EE55004D6E13 /* Generated */,
 				C868792F2991E4AF00BC80E0 /* Source */,
 				C868792E2991E4AF00BC80E0 /* Products */,
 				9CCED0769A126DF97A158E78 /* Pods */,
@@ -80,15 +99,153 @@
 		C868792F2991E4AF00BC80E0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C86879302991E4AF00BC80E0 /* AppDelegate.swift */,
-				C86879322991E4AF00BC80E0 /* SceneDelegate.swift */,
+				C88C94842991EA3D004D6E13 /* BaseCoordinator */,
+				C88C94832991EA2E004D6E13 /* Protocol */,
+				C88C947F2991E9F6004D6E13 /* DataStore */,
+				C88C947E2991E940004D6E13 /* Resources */,
+				C88C947D2991E92D004D6E13 /* UI */,
+				C88C947C2991E924004D6E13 /* Managers */,
+				C88C947B2991E919004D6E13 /* Networking */,
 				C86879342991E4AF00BC80E0 /* ViewController.swift */,
 				C86879362991E4AF00BC80E0 /* Main.storyboard */,
-				C86879392991E4B100BC80E0 /* Assets.xcassets */,
 				C868793B2991E4B100BC80E0 /* LaunchScreen.storyboard */,
-				C868793E2991E4B100BC80E0 /* Info.plist */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		C88C947B2991E919004D6E13 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C88C947C2991E924004D6E13 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C88C947D2991E92D004D6E13 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C88C94882991EA9B004D6E13 /* BookDetail */,
+				C88C94872991EA92004D6E13 /* BookList */,
+				C88C94852991EA77004D6E13 /* Globals */,
+				C88C94862991EA87004D6E13 /* SharedUIElements */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C88C947E2991E940004D6E13 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C868793E2991E4B100BC80E0 /* Info.plist */,
+				C86879302991E4AF00BC80E0 /* AppDelegate.swift */,
+				C86879322991E4AF00BC80E0 /* SceneDelegate.swift */,
+				C86879392991E4B100BC80E0 /* Assets.xcassets */,
+				C88C94902991EDE8004D6E13 /* Colors.xcassets */,
+				C88C94922991EDF7004D6E13 /* Images.xcassets */,
+				C88C94892991EADA004D6E13 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C88C947F2991E9F6004D6E13 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				C88C94822991EA1B004D6E13 /* Contract */,
+				C88C94812991EA0D004D6E13 /* Model */,
+				C88C94802991EA05004D6E13 /* Manager */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		C88C94802991EA05004D6E13 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C88C94812991EA0D004D6E13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C88C94822991EA1B004D6E13 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		C88C94832991EA2E004D6E13 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C88C94842991EA3D004D6E13 /* BaseCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseCoordinator;
+			sourceTree = "<group>";
+		};
+		C88C94852991EA77004D6E13 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				C88C94992991F10A004D6E13 /* UIColor+Styles.swift */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		C88C94862991EA87004D6E13 /* SharedUIElements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedUIElements;
+			sourceTree = "<group>";
+		};
+		C88C94872991EA92004D6E13 /* BookList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BookList;
+			sourceTree = "<group>";
+		};
+		C88C94882991EA9B004D6E13 /* BookDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BookDetail;
+			sourceTree = "<group>";
+		};
+		C88C94892991EADA004D6E13 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C88C948C2991EB08004D6E13 /* Sprout-Bold.ttf */,
+				C88C948A2991EB08004D6E13 /* Sprout-ExtraBold.ttf */,
+				C88C948B2991EB08004D6E13 /* Sprout-Medium.ttf */,
+				C88C948D2991EB08004D6E13 /* Sprout-MediumItalic.ttf */,
+				C88C948E2991EB08004D6E13 /* Sprout-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C88C94942991EE55004D6E13 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				C88C94952991EE55004D6E13 /* Assets.swift */,
+				C88C94962991EE55004D6E13 /* Fonts.swift */,
+			);
+			name = Generated;
+			path = Resources/Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,9 +256,11 @@
 			buildConfigurationList = C86879412991E4B100BC80E0 /* Build configuration list for PBXNativeTarget "SEARCHBOOKS" */;
 			buildPhases = (
 				6517B8C0C2A09C1968412C1F /* [CP] Check Pods Manifest.lock */,
+				C88C948F2991EC6A004D6E13 /* SwiftGen */,
 				C86879292991E4AF00BC80E0 /* Sources */,
 				C868792A2991E4AF00BC80E0 /* Frameworks */,
 				C868792B2991E4AF00BC80E0 /* Resources */,
+				DDB1B110912F541329F08786 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -121,6 +280,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
+				ORGANIZATIONNAME = "Ousmane DIAGNE";
 				TargetAttributes = {
 					C868792C2991E4AF00BC80E0 = {
 						CreatedOnToolsVersion = 14.2;
@@ -150,7 +310,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88C949C2991F3F8004D6E13 /* README.md in Resources */,
 				C868793D2991E4B100BC80E0 /* LaunchScreen.storyboard in Resources */,
+				C88C94932991EDF7004D6E13 /* Images.xcassets in Resources */,
+				C88C94912991EDE8004D6E13 /* Colors.xcassets in Resources */,
 				C868793A2991E4B100BC80E0 /* Assets.xcassets in Resources */,
 				C86879382991E4AF00BC80E0 /* Main.storyboard in Resources */,
 			);
@@ -181,6 +344,42 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C88C948F2991EC6A004D6E13 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\n";
+		};
+		DDB1B110912F541329F08786 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SEARCHBOOKS/Pods-SEARCHBOOKS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SEARCHBOOKS/Pods-SEARCHBOOKS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SEARCHBOOKS/Pods-SEARCHBOOKS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -189,7 +388,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86879352991E4AF00BC80E0 /* ViewController.swift in Sources */,
+				C88C949A2991F10A004D6E13 /* UIColor+Styles.swift in Sources */,
+				C88C94982991EE55004D6E13 /* Fonts.swift in Sources */,
 				C86879312991E4AF00BC80E0 /* AppDelegate.swift in Sources */,
+				C88C94972991EE55004D6E13 /* Assets.swift in Sources */,
 				C86879332991E4AF00BC80E0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,12 +542,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PSV7RTPF84;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SEARCHBOOKS/Info.plist;
+				INFOPLIST_FILE = Source/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,12 +575,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PSV7RTPF84;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SEARCHBOOKS/Info.plist;
+				INFOPLIST_FILE = Source/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
