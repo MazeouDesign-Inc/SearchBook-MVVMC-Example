@@ -1,0 +1,31 @@
+# Uncomment this line to define a global platform for your project
+minimum_deployment_target = '14.0'
+platform :ios, minimum_deployment_target
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+#Variables
+
+use_frameworks!
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+def sharedPod
+  #Core
+  #Dev Tools
+end
+
+target 'SEARCHBOOKS' do
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  use_frameworks!
+  sharedPod
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            # Ensure we set all Pods to match the minimum deployment target specified by the app
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = minimum_deployment_target
+        end
+    end
+end
