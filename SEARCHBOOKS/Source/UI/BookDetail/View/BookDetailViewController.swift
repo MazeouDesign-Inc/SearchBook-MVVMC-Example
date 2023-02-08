@@ -26,11 +26,9 @@ class BookDetailViewController: UIViewController {
     private func bindUI(){
         self.viewModel.showData = { [weak self] (data) in
             guard let `self` = self else { return }
-            //zzz - self.imageView.image = UIImage(named: data.image)
-            //zzz - self.titleLabel.text = data.name
             self.titleLabel.text = data.bookInfos?.title
-            //zzz - self.descriptionTextView.text = data.description
             self.descriptionTextView.text = data.bookInfos?.bookDescription
+            self.imageView.getImageFromUrl(imageURL: NSURL(string: data.bookInfos?.bookImages?.thumb ?? "")! as URL)
         }
     }
 }
