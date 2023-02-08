@@ -22,22 +22,21 @@ class BookTableViewCell: UITableViewCell {
     var reloadFunction: (() -> Void)?
     
     func applyData(book: Book) {
-        titleLabel.text = book.bookInfos?.title
-        
-        print("zzz - ABCDE: \(book.bookInfos?.bookImages?.thumb ?? "")")
-        
+        favoriteButton.titleLabel?.isHidden = true
+        titleLabel.text = book.bookInfos?.title.trimmingCharacters(in: .whitespaces)
+        titleLabel.font = FontFamily.Sprout.bold.font(size: 16)
         if let authorsList = book.bookInfos?.authors {
             for author in authorsList {
                 authors = authors.isEmpty ? author : " \(authors), \(author)"
             }
-            authorLabel.text = authors
+            authorLabel.text = authors.trimmingCharacters(in: .whitespaces)
         }
-        //authorLabel.font = FontFamily.Sprout.bold.font(size: 18)
+        authorLabel.font = FontFamily.Sprout.bold.font(size: 16)
         
         if let bookDescription = book.bookInfos?.bookDescription {
-            descriptionLabel.text = bookDescription
+            descriptionLabel.text = bookDescription.trimmingCharacters(in: .whitespaces)
         } else {
-            descriptionLabel.text = book.searchInfos?.textSnippet
+            descriptionLabel.text = book.searchInfos?.textSnippet?.trimmingCharacters(in: .whitespaces)
         }
         bookImageView.getImageFromUrl(imageURL: NSURL(string: book.bookInfos?.bookImages?.thumb ?? "")! as URL)
         self.book = book
@@ -48,9 +47,9 @@ class BookTableViewCell: UITableViewCell {
             let matchingBook = coreDataBooks.filter { $0.id == book.id }.first
             if matchingBook == nil {
                 // Book does'nt exist in CoreData
-                favoriteButton.backgroundColor = .red
+                favoriteButton.tintColor = .notFavoriteColor
             } else {
-                favoriteButton.backgroundColor = .green
+                favoriteButton.tintColor = .favoriteColor
                 // Book already exist in CoreData
             }
         } catch {
@@ -58,36 +57,17 @@ class BookTableViewCell: UITableViewCell {
         }
     }
     
-    
     @IBAction func saveBook(_ sender: UIButton) {
         let context = CoreDataStack.shared.persistentContainer.viewContext
         context.performAndWait({
             context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-//            self.addUpdateCategories(inContext: context)
-//            self.addUpdateArticles(inContext: context)
             self.favoriteBook(inContext: context)
             context.saveAndLogError()
-//            success()
-            
         })
     }
     
     func favoriteBook(inContext context: NSManagedObjectContext) {
-        // Manage categories persistant storage into CoreData
-//        do {
-//            let coreDataCategories = try context.fetch(ArticleCategory.fetchRequest())
-//            for category in categoriesList {
-//                var matchingCategory = coreDataCategories.filter { $0.id == category._id }.first
-//                if matchingCategory == nil {
-//                    matchingCategory = ArticleCategory(context: context)
-//                    matchingCategory?.id = category._id
-//                }
-//                matchingCategory?.update(category: category)
-//            }
-//            self.articlesCategoryList = coreDataCategories
-//        } catch {
-//            //TODO: Error management
-//        }
+        // Manage books persistant storage into CoreData
         do {
             let coreDataBooks = try context.fetch(FavoriteBook.fetchRequest())
             var matchingBook = coreDataBooks.filter { $0.id == book?.id }.first
@@ -95,9 +75,9 @@ class BookTableViewCell: UITableViewCell {
                 // Book does'nt exist in CoreData
                 matchingBook = FavoriteBook.init(context: context)
                 matchingBook?.addToFavorite(book: self.book, context: context)
-                favoriteButton.backgroundColor = .green
+                favoriteButton.tintColor = .favoriteColor
             } else if let matchingBook = matchingBook {
-                favoriteButton.backgroundColor = .red
+                favoriteButton.tintColor = .notFavoriteColor
                 // Book already exist in CoreData
                 context.delete(matchingBook)
             }
@@ -105,19 +85,5 @@ class BookTableViewCell: UITableViewCell {
             //TODO: Error management
         }
         reloadFunction?()
-
     }
-    
-//    func saveInCoreData(_ success: @escaping () -> Void) {
-//        let context = CoreDataStack.shared.persistentContainer.newBackgroundContext()
-//        context.performAndWait({
-//            context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-//            self.addUpdateCategories(inContext: context)
-//            self.addUpdateArticles(inContext: context)
-//            context.saveAndLogError()
-//            success()
-//
-//        })
-//
-//    }
 }

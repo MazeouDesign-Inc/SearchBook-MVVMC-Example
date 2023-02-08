@@ -24,6 +24,8 @@ class SearchBookViewController: UIViewController {
     var listBooksViewCoordinator : BookListCoordinator!
     var dataStore : DataStore!
     var rootViewController: UINavigationController!
+    var bookName: String = ""
+    var authorName: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +49,11 @@ class SearchBookViewController: UIViewController {
     
     func refreshBooks() {
         handleDone()
-        DataManager.shared.loadBooks(bookTitle: textFieldBookTitle.text ?? "",
-                                     bookAuthor: textFieldBookAuthor.text ?? "",
+        bookName = textFieldBookTitle.text?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+        authorName = textFieldBookAuthor.text?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+            
+        DataManager.shared.loadBooks(bookTitle: bookName,
+                                     bookAuthor: authorName,
                                      success: { [weak self] (books) in
             DispatchQueue.main.async {
                 self?.listBooksViewCoordinator = BookListCoordinator(dataStore: self?.dataStore)

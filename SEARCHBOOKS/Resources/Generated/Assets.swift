@@ -46,6 +46,7 @@ internal enum Asset {
   }
   internal enum Images {
     internal static let emptyBookPocket = ImageAsset(name: "emptyBookPocket")
+    internal static let favorite = ImageAsset(name: "favorite")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

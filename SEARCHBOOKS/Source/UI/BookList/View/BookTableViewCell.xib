@@ -11,14 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="BookTableViewCell" rowHeight="312" id="pMq-r7-fXo" customClass="BookTableViewCell" customModule="MVVM_C_Example" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" indentationWidth="10" reuseIdentifier="BookTableViewCell" rowHeight="312" id="pMq-r7-fXo" customClass="BookTableViewCell" customModule="SEARCHBOOKS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="393" height="312"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pMq-r7-fXo" id="2dp-8w-qg9">
                 <rect key="frame" x="0.0" y="0.0" width="393" height="312"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6F-8j-31R" customClass="PaddedBookView" customModule="MVVM_C_Example" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6F-8j-31R" customClass="PaddedBookView" customModule="SEARCHBOOKS" customModuleProvider="target">
                         <rect key="frame" x="10" y="10" width="373" height="292"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qwQ-Ss-msb">
@@ -31,16 +31,6 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="146"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dti-Mp-h2n">
-                                                <rect key="frame" x="290" y="13" width="75" height="35"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                <connections>
-                                                    <action selector="saveBook:" destination="pMq-r7-fXo" eventType="touchUpInside" id="DLU-S5-zpZ"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -120,13 +110,25 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dti-Mp-h2n">
+                                <rect key="frame" x="0.0" y="0.0" width="72" height="62"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="favorite"/>
+                                <buttonConfiguration key="configuration" style="plain" image="favorite"/>
+                                <connections>
+                                    <action selector="saveBook:" destination="pMq-r7-fXo" eventType="touchUpInside" id="DLU-S5-zpZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="qwQ-Ss-msb" secondAttribute="trailing" id="4pU-oX-C3V"/>
                             <constraint firstItem="qwQ-Ss-msb" firstAttribute="leading" secondItem="D6F-8j-31R" secondAttribute="leading" id="At4-Vn-bHw"/>
                             <constraint firstAttribute="bottom" secondItem="qwQ-Ss-msb" secondAttribute="bottom" id="ahS-1L-s9H"/>
+                            <constraint firstItem="dti-Mp-h2n" firstAttribute="leading" secondItem="D6F-8j-31R" secondAttribute="leading" id="cOm-w7-wQP"/>
                             <constraint firstItem="qwQ-Ss-msb" firstAttribute="top" secondItem="D6F-8j-31R" secondAttribute="top" id="hyn-u8-hcu"/>
+                            <constraint firstItem="dti-Mp-h2n" firstAttribute="top" secondItem="D6F-8j-31R" secondAttribute="top" id="tII-zW-6r5"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -150,6 +152,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="favorite" width="48" height="48"/>
         <namedColor name="dark">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -161,9 +164,6 @@
         </namedColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
