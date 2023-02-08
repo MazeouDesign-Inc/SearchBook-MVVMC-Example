@@ -111,10 +111,11 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dti-Mp-h2n">
-                                <rect key="frame" x="301" y="0.0" width="72" height="62"/>
+                                <rect key="frame" x="0.0" y="0.0" width="72" height="62"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="favorite" imagePlacement="top"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="favorite"/>
+                                <buttonConfiguration key="configuration" style="plain" image="favorite"/>
                                 <connections>
                                     <action selector="saveBook:" destination="pMq-r7-fXo" eventType="touchUpInside" id="DLU-S5-zpZ"/>
                                 </connections>
@@ -125,9 +126,9 @@
                             <constraint firstAttribute="trailing" secondItem="qwQ-Ss-msb" secondAttribute="trailing" id="4pU-oX-C3V"/>
                             <constraint firstItem="qwQ-Ss-msb" firstAttribute="leading" secondItem="D6F-8j-31R" secondAttribute="leading" id="At4-Vn-bHw"/>
                             <constraint firstAttribute="bottom" secondItem="qwQ-Ss-msb" secondAttribute="bottom" id="ahS-1L-s9H"/>
+                            <constraint firstItem="dti-Mp-h2n" firstAttribute="leading" secondItem="D6F-8j-31R" secondAttribute="leading" id="cOm-w7-wQP"/>
                             <constraint firstItem="qwQ-Ss-msb" firstAttribute="top" secondItem="D6F-8j-31R" secondAttribute="top" id="hyn-u8-hcu"/>
                             <constraint firstItem="dti-Mp-h2n" firstAttribute="top" secondItem="D6F-8j-31R" secondAttribute="top" id="tII-zW-6r5"/>
-                            <constraint firstAttribute="trailing" secondItem="dti-Mp-h2n" secondAttribute="trailing" id="wfU-6m-B2G"/>
                         </constraints>
                     </view>
                 </subviews>
