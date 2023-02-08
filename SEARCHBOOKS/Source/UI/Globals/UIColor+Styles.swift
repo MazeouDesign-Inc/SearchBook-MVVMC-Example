@@ -68,6 +68,14 @@ extension UIColor {
     class var alternateViewBackgroundColor: UIColor {
         return Asset.Colors.gray50.color
     }
+    
+    class var notFavoriteColor: UIColor {
+        return Asset.Colors.gray300.color
+    }
+    
+    class var favoriteColor: UIColor {
+        return Asset.Colors.error.color
+    }
 
     class var viewBackgroundColor: UIColor {
         return Asset.Colors.white.color

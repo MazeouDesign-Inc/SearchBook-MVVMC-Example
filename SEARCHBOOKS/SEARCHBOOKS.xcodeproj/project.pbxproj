@@ -63,6 +63,7 @@
 		C88C950F29922518004D6E13 /* BookDetailViewModelImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C950E29922518004D6E13 /* BookDetailViewModelImp.swift */; };
 		C88C951129922576004D6E13 /* UIImageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C951029922576004D6E13 /* UIImageView+extension.swift */; };
 		C88C951B2992A699004D6E13 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C951A2992A699004D6E13 /* Button.swift */; };
+		C88C951D29938246004D6E13 /* PaddedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88C951C29938246004D6E13 /* PaddedBookView.swift */; };
 		FB5450EE3D40F77EE36FE5C0 /* Pods_SEARCHBOOKS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70D9A2566A6CF17F3CAB9D33 /* Pods_SEARCHBOOKS.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 		C88C950E29922518004D6E13 /* BookDetailViewModelImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModelImp.swift; sourceTree = "<group>"; };
 		C88C951029922576004D6E13 /* UIImageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+extension.swift"; sourceTree = "<group>"; };
 		C88C951A2992A699004D6E13 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		C88C951C29938246004D6E13 /* PaddedBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,7 @@
 			children = (
 				C88C94A02991F8EA004D6E13 /* PaddedTextField.swift */,
 				C88C951A2992A699004D6E13 /* Button.swift */,
+				C88C951C29938246004D6E13 /* PaddedBookView.swift */,
 			);
 			path = SharedUIElements;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				C88C94B129920208004D6E13 /* BookSearchInfos.swift in Sources */,
 				C88C94E5299220B0004D6E13 /* BookListViewController.swift in Sources */,
 				C88C950829922445004D6E13 /* CoreDataStack.swift in Sources */,
+				C88C951D29938246004D6E13 /* PaddedBookView.swift in Sources */,
 				C88C94C329920AE1004D6E13 /* TextfieldsKeyboardManager.swift in Sources */,
 				C88C94FF2992238C004D6E13 /* FavoriteBookInfos.swift in Sources */,
 				C88C950A29922486004D6E13 /* NetworkManager.swift in Sources */,
