@@ -19,6 +19,12 @@ class BookListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.Images.close.image,
+                                                                 style: .plain,
+                                                                 target: self,
+                                                                 action: #selector(dismissView))
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.bindUI()
@@ -36,8 +42,10 @@ class BookListViewController: UIViewController {
         self.viewModel.hideLoader = { print("Hide Loader") }
     }
     
-    
-    
+    @objc
+    func dismissView() {
+        self.dismiss(animated: true)
+    }
 }
 
 extension BookListViewController : UITableViewDelegate, UITableViewDataSource{
@@ -53,7 +61,6 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource{
             if self.viewModel.isFavoriteBooksView {
                 do {
                     let context = CoreDataStack.shared.persistentContainer.viewContext
-                    //context.processPendingChanges()
                     let favoriteBooks = try context.fetch(FavoriteBook.fetchRequest())
                     var books: [Book] = []
                     for favoriteBook in favoriteBooks {
@@ -72,12 +79,9 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource{
                     }
     
                     self.viewModel.getData(books: books)
-                } catch {
-                    
-                }
+                } catch {}
+                
                 DispatchQueue.main.async {
-                    //self.viewModel.showData?()
-                    //self.viewModel.viewDidLoad()
                     self.tableView.reloadData()
                 }
             }
@@ -94,4 +98,3 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource{
         350
     }
 }
-
