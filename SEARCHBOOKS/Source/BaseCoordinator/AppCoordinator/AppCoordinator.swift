@@ -32,9 +32,7 @@ final class AppCoordinator : Coordinator{
     
     @discardableResult
     func start()->UIViewController{
-        //zzz - listCoordinator = AnimeListCoordinator(dataStore: dataStore)
         searchCoordinator = SearchBookCoordinator(dataStore: dataStore)
-        //zzz - let mainVC = listCoordinator.start()
         let mainVC = searchCoordinator.start()
         self.window?.rootViewController = mainVC
         self.window?.makeKeyAndVisible()

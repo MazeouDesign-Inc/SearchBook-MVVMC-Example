@@ -10,8 +10,8 @@ import Foundation
 
 class BookDetailViewModelImp : BookDetailViewModel{
     var data: Book
-    var title: String{
-        return data.bookInfos?.title ?? "zzz - Empty Title"
+    var title: String {
+        return data.bookInfos?.title ?? ""
     }
     
     var showData: ((Book) -> ())?

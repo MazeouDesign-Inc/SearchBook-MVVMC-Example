@@ -29,6 +29,8 @@ class BookDetailViewController: UIViewController {
             self.titleLabel.text = data.bookInfos?.title
             self.descriptionTextView.text = data.bookInfos?.bookDescription
             self.imageView.getImageFromUrl(imageURL: NSURL(string: data.bookInfos?.bookImages?.thumb ?? "")! as URL)
+            self.titleLabel.font = FontFamily.Sprout.bold.font(size: 18)
+            self.descriptionTextView.font = FontFamily.Sprout.regular.font(size: 22)
         }
     }
 }
