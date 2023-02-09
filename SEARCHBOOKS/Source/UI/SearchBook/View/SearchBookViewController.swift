@@ -36,6 +36,7 @@ class SearchBookViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        loadLastBookResearch()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,6 +58,15 @@ class SearchBookViewController: UIViewController {
         buttonShowFavoriteBooks.setAttributedTitle(NSAttributedString(string: "MA BIBLIOTHÈQUE", attributes: [.font: FontFamily.Sprout.bold.font(size: 17)]), for: .selected)
     }
     
+    func loadLastBookResearch() {
+        if let savedBookName = UserDefaults.standard.string(forKey: "bookName") {
+            textFieldBookTitle.text = savedBookName
+        }
+        if let savedBookAuthor = UserDefaults.standard.string(forKey: "bookAuthor") {
+            textFieldBookAuthor.text = savedBookAuthor
+        }
+    }
+    
     func refreshBooks() {
         handleDone()
         bookName = textFieldBookTitle.text?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
@@ -76,6 +86,8 @@ class SearchBookViewController: UIViewController {
     }
     
     @IBAction func handleTapSearchBooks(_ sender: UIButton) {
+        UserDefaults.standard.set(textFieldBookTitle.text, forKey: "bookName")
+        UserDefaults.standard.set(textFieldBookAuthor.text, forKey: "bookAuthor")
         refreshBooks()
     }
     
@@ -100,8 +112,6 @@ class SearchBookViewController: UIViewController {
             }
             DispatchQueue.main.async {
                 self.listBooksViewCoordinator = BookListCoordinator(dataStore: self.dataStore)
-                
-                //self.rootViewController.pushViewController(listBooksVC, animated: true)
                 self.listBooksViewCoordinator.isFavoriteBooksView = true
                 let listBooksVC = self.listBooksViewCoordinator.start(books: books!)
                 self.rootViewController.present(listBooksVC, animated: true)
