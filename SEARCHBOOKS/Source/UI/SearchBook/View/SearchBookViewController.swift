@@ -33,6 +33,16 @@ class SearchBookViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     func configureUI() {
         textFieldBookTitle.textInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         textFieldBookTitle.attributedPlaceholder = textFieldBookTitle.textFieldAttrPlaceHolder(

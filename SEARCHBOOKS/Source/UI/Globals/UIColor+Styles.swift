@@ -84,4 +84,8 @@ extension UIColor {
     class var primaryColor: UIColor {
         return Asset.Colors.primary.color
     }
+    
+    class var navBarAppearanceDefaultColor: UIColor {
+        return Asset.Colors.primary.color
+    }
 }
